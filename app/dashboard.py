@@ -3,13 +3,16 @@ import plotly.graph_objects as go
 from dash import Dash, dcc, html, Input, Output
 import numpy as np
 
+from config import CSV_PATH
+
 # Read the data
-df = pd.read_csv('data/dev_tool_relationships.csv')
+df = pd.read_csv(CSV_PATH)
 
 # Create the app
 app = Dash(__name__)
 
 # Define available metrics for weighting
+# See `queries.py` for the metrics available
 METRICS = {
     'Num Project Devs Engaging with Dev Tool': 'Project Devs',
     'Num Smart Contract Devs Engaging with Dev Tool': 'Smart Contract Devs',
@@ -17,7 +20,7 @@ METRICS = {
     'Project Total Gas Fees': 'Total Gas Fees'
 }
 
-# Add these constants
+# Constants
 DEFAULT_TOP_PROJECTS = 50
 DEFAULT_TOP_DEVTOOLS = 30
 MAX_PROJECTS = 100
