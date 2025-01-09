@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "rf-weights-app"
+version = "0.1.0"
+description = "Visualize RF dependency graph weights"
+authors = ["ccerv1 <carl.cervone@gmail.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.13"
+pandas = "^2.0.3"
+networkx = "^3.1"
+numpy = "^1.24.3"
+plotly = "^5.18.0"
+dash = "^2.14.2"
+google-cloud-bigquery = "^3.18.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
